@@ -44,5 +44,19 @@ namespace TareaS6LopezA
             await Navigation.PushAsync(new viewInsertarA());
 
         }
+
+        private async void btnActualizar_Clicked(object sender, EventArgs e)
+        {
+            var estudiante = MyListView.SelectedItem as WS.Datos;
+
+            await Navigation.PushAsync(new viewActualizar(estudiante.codigo, estudiante.nombre, estudiante.apellido, estudiante.edad));
+        }
+
+        private async void btnEliminar_Clicked(object sender, EventArgs e)
+        {
+            var estudiante = MyListView.SelectedItem as WS.Datos;
+
+            await Navigation.PushAsync(new viewEliminar(estudiante.codigo, estudiante.nombre, estudiante.apellido, estudiante.edad));
+        }
     }
 }
